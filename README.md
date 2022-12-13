@@ -1,5 +1,5 @@
-# todo-app
-Todo app that allows the user to create, edit, delete and check a basic summary about the creation and completion of their tasks
+# Todo App
+Todo app that allows the user to create, edit, delete and check a basic summary about the creation and completion of their tasks.
 
 ## Features:
 The features will be separed on releases.

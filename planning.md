@@ -21,5 +21,3 @@ The features will be separed on releases.
 ## Technologies.
 
 The front end application will be created on javascript using its angular framework and redux to manage the information.
-
-The back end application will be created using Java with its framework SpringBoot and it will be connected to a relational data base (to be defined).

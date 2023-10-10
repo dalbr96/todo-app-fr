@@ -2,12 +2,12 @@
 header {
     background: #213435;
     color: #e1e3ac;
+    height: 4rem;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: right;
 }
 
 nav a {
@@ -16,5 +16,9 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #46685b;
+}
+
+.nav-icn{
+    height: 100%;
 }

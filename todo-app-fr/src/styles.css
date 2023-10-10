@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+    background: #213435;
+    color: #e1e3ac;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: #e1e3ac;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

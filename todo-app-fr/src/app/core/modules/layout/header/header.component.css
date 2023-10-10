@@ -1,0 +1,15 @@
+.app-title-container{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.app-title-container img{
+    height: inherit;
+}
+
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

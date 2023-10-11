@@ -14,12 +14,28 @@
         justify-content: center;
         margin-top: 0.5rem;
     }
+
+    .lg{
+        display: none;
+    }
+
+    .sm{
+        display: flex;
+    }
 }
 
 @media(min-width:831px) {
     .main-navigation {
         max-width: 20vw;
         height: 100vh;
+    }
+
+    .lg{
+        display: block;
+    }
+
+    .sm{
+        display: none
     }
 }
 

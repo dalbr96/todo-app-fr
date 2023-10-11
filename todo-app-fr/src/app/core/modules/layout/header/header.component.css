@@ -1,0 +1,14 @@
+.app-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.app-title-container img {
+    height: 80%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

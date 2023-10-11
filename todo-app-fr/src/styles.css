@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+header {
+    background: #213435;
+    color: #e1e3ac;
+    height: 4rem;
+}
+
+footer {
+    background: #213435;
+    color: #e1e3ac;
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+.nav-icn {
+    height: 100%;
+}
+
+.header-height {
+    height: inherit;
+}

@@ -8,6 +8,12 @@
         max-width: 100%;
         height: 3rem;
     }
+
+    .tittle-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
 }
 
 @media(min-width:831px) {
@@ -16,6 +22,32 @@
         height: 100vh;
     }
 }
+
+nav{
+    background-color: #648a64;
+}
+
+img {
+    height: 2rem;
+}
+
+h3 {
+    color: #e1e3ac;
+    padding-right: 1rem;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:focus,
+button:focus-visible {
+    background-color: #46685b;
+    border: none;
+    outline: none;
+}
+
 
 .main-navigation {
     background-color: #648a64;

@@ -1,7 +1,10 @@
 <div class="main-container">
     <div class="main-navigation">
-        <h3>Título del menú</h3>
-        <nav>
+        <div class="tittle-container" (click)="toogleOpenMenu()">
+            <h3>Título del menú </h3>
+            <img src="assets\icn\angle_icn.svg" alt="mostrar menú" [@click]="openMenu?'rotated': 'unrotated'">
+        </div>
+        <nav [@expand]="openMenu?'expanded': 'collapsed'">
         </nav>
     </div>
     <div class="main-section">

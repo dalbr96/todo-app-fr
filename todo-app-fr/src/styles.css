@@ -5,6 +5,15 @@ header {
     height: 4rem;
 }
 
+footer {
+    background: #213435;
+    color: #e1e3ac;
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 nav {
     display: flex;
     justify-content: right;
@@ -19,6 +28,6 @@ nav a:hover {
     background-color: #46685b;
 }
 
-.nav-icn{
+.nav-icn {
     height: 100%;
 }

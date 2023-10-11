@@ -1,0 +1,22 @@
+.app-footer{
+    text-align: center;
+}
+
+.socials-container{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 5%;
+    margin-top: 0.5rem;
+    height: 40%;
+}
+
+img{
+    height: 90%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.app-footer a{
+    color: #e1e3ac;
+}

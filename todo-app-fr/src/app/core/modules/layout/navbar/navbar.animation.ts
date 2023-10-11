@@ -13,7 +13,6 @@ const collapsedMenuState = state("collapsed", style({
     display: 'none'
 }))
 
-
 const closeNavbarTransition = transition('expanded => collapsed', [
     animate('1s')
 ])
@@ -22,7 +21,7 @@ const openNavbarTransition = transition('collapsed => expanded', [
     animate('1s 500ms ease-in')
 ])
 
-export const navbarAnimation =  trigger('expand', [expandedMenuState, collapsedMenuState, closeNavbarTransition, openNavbarTransition]);
+export const navbarAnimation = trigger('expand', [expandedMenuState, collapsedMenuState, closeNavbarTransition, openNavbarTransition]);
 
 const visibleMenu = state("visible", style({
     display: 'flex',
@@ -43,4 +42,4 @@ const menuClosed = transition('visible => hidden', [
     animate(500)
 ])
 
-export const menuAnimation =  trigger('click', [visibleMenu, hiddenMenu, menuClosed, menuClicked]);
+export const menuAnimation = trigger('click', [visibleMenu, hiddenMenu, menuClosed, menuClicked]);

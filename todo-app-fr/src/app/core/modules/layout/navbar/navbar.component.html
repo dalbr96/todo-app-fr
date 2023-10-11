@@ -9,9 +9,10 @@
         <li class="nav-item"><a href="#"><img class="nav-icn" src="assets\icn\user_icn.svg"
                     alt="Ícono aplicación">Test</a></li>
     </ul>
-    <button type="button"><img class="collapsed-nav" src="assets\icn\menu_icn.svg" alt="Menú colapsado"></button>
-    <div class="expanded_nav">
-        <button type="button"><img class="back_btn" src="assets\icn\back_icn.svg" alt="Ícono aplicación"></button>
+    <button type="button" (click)="toggleNavigationMenu()" [@click]="isCollapsed?'visible': 'hidden'"><img class="collapsed-nav" src="assets\icn\menu_icn.svg"
+            alt="Menú colapsado"></button>
+    <div class="expanded_nav" [@expand]="isCollapsed?'collapsed':'expanded'">
+        <button type="button" (click)="toggleNavigationMenu()"><img class="back_btn" src="assets\icn\back_icn.svg" alt="Ícono aplicación"></button>
         <ul class="collapsed-nav">
             <li class="nav-item"><a href="#"><img class="nav-icn-collapsed" src="assets\icn\home_icn.svg"
                         alt="Ícono aplicación">Test</a></li>

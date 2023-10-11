@@ -25,7 +25,8 @@ button {
     border: none;
 }
 
-button:focus, button:focus-visible {
+button:focus,
+button:focus-visible {
     background-color: #46685b;
     border: none;
     outline: none;

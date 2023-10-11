@@ -1,28 +1,3 @@
-.header-height {
-    height: inherit;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    height: inherit;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    height: inherit;
-}
-
-li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    height: inherit;
-    text-decoration: none;
-}
-
 .app-title-container {
     display: flex;
     align-items: center;

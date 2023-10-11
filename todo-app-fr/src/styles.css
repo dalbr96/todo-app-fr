@@ -19,15 +19,10 @@ nav {
     justify-content: right;
 }
 
-nav a {
-    color: #e1e3ac;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: #46685b;
-}
-
 .nav-icn {
     height: 100%;
+}
+
+.header-height {
+    height: inherit;
 }

@@ -1,0 +1,15 @@
+form {
+    display: grid;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+.msgContainer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+a, p {
+    color: #213435;
+}

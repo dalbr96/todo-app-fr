@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { HttpService } from '../http/http.service';
+import { environment } from 'src/environments/environment';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 
 export class AuthorizationService {
+  private isLoggedIn = false;
+
   constructor(private http: HttpService) { }
-  
-  loggedIn(): Observable<boolean>{
-    return this.http.get<boolean>('/user')
+
+  checkLoggedUser(): Observable<boolean> {
+    return this.http.get<boolean>(environment.userEndpoint).pipe(tap((response: boolean) => this.isLoggedIn = response))
+  }
+
+  loggedIn(): boolean {
+    return this.isLoggedIn;
   }
 }

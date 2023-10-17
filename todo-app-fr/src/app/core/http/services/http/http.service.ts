@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ import { Observable } from 'rxjs';
 export class HttpService{
   constructor(private readonly http: HttpClient) { }
 
-  get<TResponse>(url: string): Observable<TResponse> {
-    return this.http.get<TResponse>(url);
+  get<TResponse>(url: string, headers?: HttpHeaders): Observable<TResponse> {
+    return this.http.get<TResponse>(environment.urlBase + url, {headers});
   }
 
   post<TResponse, TRequest> (url: string, body: TRequest): Observable<TResponse> {
-    return this.http.post<TResponse>(url, body);
+    return this.http.post<TResponse>(environment.urlBase + url, body);
   }
 }

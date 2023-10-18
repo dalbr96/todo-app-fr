@@ -13,3 +13,10 @@ form {
 a, p {
     color: #213435;
 }
+
+.loginContainer{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background: #e1eadc;
+}

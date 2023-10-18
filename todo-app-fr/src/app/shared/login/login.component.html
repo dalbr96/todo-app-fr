@@ -1,13 +1,17 @@
 <div class="loginContainer">
-    <form>
+    <form [formGroup]="loginForm" autocomplete="off">
         <label for="txtUsername"> Usuario </label>
-        <input type="text" id="txtUsername" />
+        <input type="text" id="txtUsername" formControlName="username" />
 
         <label for="txtPassword"> Contraseña </label>
-        <input type="password" id="txtPassword" />
+        <input type="password" id="txtPassword" formControlName="password" />
 
-        <button type="button">Iniciar sesión</button>
+        <button type="button" [disabled]="!validForm" (click)="loginUser()">Iniciar sesión</button>
     </form>
+
+    <div class="msgContainer">
+        <p class="errorMessage">{{errorMessage}}</p>
+    </div>
 
     <div class="msgContainer">
         <p>¿No tienes una cuenta?, <a [routerLink]="['/sign_in']" routerLinkActive="active">regístrate</a></p>

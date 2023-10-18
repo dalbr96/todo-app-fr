@@ -17,7 +17,7 @@ export class AuthorizationService {
   }
 
   loginUser(body: Credentials): Observable<Auth> {
-    return this.http.post<Auth, Credentials>(environment.loginEndpoint, body);
+    return this.http.post<Auth, Credentials>(environment.loginEndpoint, body).pipe(tap((response) => this.isLoggedIn = !!response));
   }
 
   loggedIn(): boolean {

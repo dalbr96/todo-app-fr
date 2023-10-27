@@ -21,3 +21,7 @@ a,
 p {
     color: #213435;
 }
+
+.inputContainer{
+    display: inherit;
+}

@@ -4,6 +4,5 @@ import { TestComponent } from "src/app/shared/test/test.component";
 
 export const appRoutes: Routes = [
     { path: '', component: TestComponent, canActivate: [guardFunction] },
-    { path: 'authentication', loadChildren: () => import('./core/modules/authentication/authentication.module').then(m => m.AuthenticationModule) },
-    { path: '**', redirectTo: 'authentication', pathMatch: 'full' }
+    { path: 'authentication', loadChildren: () => import('./core/modules/authentication/authentication.module').then(m => m.AuthenticationModule) }
 ]

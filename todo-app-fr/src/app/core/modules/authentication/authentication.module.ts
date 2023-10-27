@@ -7,6 +7,7 @@ import { authRoutes } from './authentication-routes';
 import { AuthorizationService } from '../../http/services/authorization/authorization.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from 'src/app/shared/text-input/text-input.component';
+import { StandardButtonComponent } from 'src/app/shared/standard-button/standard-button.component';
 
 
 
@@ -17,7 +18,8 @@ import { TextInputComponent } from 'src/app/shared/text-input/text-input.compone
     CommonModule,
     RouterModule.forChild(authRoutes),
     ReactiveFormsModule,
-    TextInputComponent
+    TextInputComponent,
+    StandardButtonComponent
   ],
   providers: [AuthorizationService]
 })

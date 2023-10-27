@@ -1,19 +1,20 @@
 <div class="signInContainer">
     <form>
-        <label for="txtUsername"> Usuario </label>
-        <input type="text" id="txtUsername" />
+        <app-text-input class="inputContainer" [control]="registrationForm.username" label="Usuario"
+            placeholder="Usuario"></app-text-input>
+        <app-text-input class="inputContainer" [control]="registrationForm.password" label="Contraseña"
+            placeholder="Contraseña" type="password"></app-text-input>
+        <app-text-input class="inputContainer" [control]="registrationForm.name" label="Nombre"
+            placeholder="Nombre"></app-text-input>
+        <app-text-input class="inputContainer" [control]="registrationForm.email" label="Correo Electrónico"
+            placeholder="Correo Electrónico" type="email"></app-text-input>
 
-        <label for="txtPassword"> Contraseña </label>
-        <input type="password" id="txtPassword" />
+        <app-standard-button class="inputContainer" id="btnSignIn" text="Registrarse"
+            (clickEvent)="signInUser()"></app-standard-button>
 
-        <label for="txtName"> Nombre </label>
-        <input type="text" id="txtName" />
-
-        <label for="txtEmail"> Correo Electrónico </label>
-        <input type="text" id="txtEmail" />
     </form>
 
     <div class="msgContainer">
-        <p><a [routerLink]="['/authentication/login']" routerLinkActive="active">Log in</a></p>
+        <p>Volver al <a [routerLink]="['/authentication/login']" routerLinkActive="active">Login</a></p>
     </div>
 </div>

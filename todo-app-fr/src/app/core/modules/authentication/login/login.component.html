@@ -5,7 +5,8 @@
         <app-text-input class="inputContainer" [control]="loginForm.password" label="Contraseña" type="password"
             placeholder="Contraseña"></app-text-input>
 
-        <button type="button" [disabled]="!validForm" (click)="loginUser()">Iniciar sesión</button>
+        <app-standard-button class="inputContainer" [disabled]="!validForm" id="btnLogin" text="Iniciar Sesión"
+            (clickEvent)="loginUser()"></app-standard-button>
     </form>
 
     <div class="msgContainer">

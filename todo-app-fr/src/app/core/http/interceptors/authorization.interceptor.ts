@@ -18,11 +18,15 @@ export class AuthorizationInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error) => {
-        if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized) {
-          this.router.navigate(['authentication/login']);
-        }
-        return of(error);
+        this.handleUnauthorizedRequests(error);
+        return throwError(() => error);
       })
     );
+  }
+
+  private handleUnauthorizedRequests(error: Error) {
+    if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized && !this.router.url.includes('authentication/login')) {
+      this.router.navigate(['authentication/login']);
+    }
   }
 }

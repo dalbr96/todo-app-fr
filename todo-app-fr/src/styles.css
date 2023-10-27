@@ -42,6 +42,10 @@ input:active {
     outline: none;
 }
 
+input.ng-invalid.ng-touched {
+    border-bottom: 3px solid red;
+ }
+
 .nav-icn {
     height: 100%;
 }

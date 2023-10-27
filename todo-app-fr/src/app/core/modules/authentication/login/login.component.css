@@ -46,3 +46,7 @@ p {
     height: 90%;
     background: #e1eadc;
 }
+
+.inputContainer{
+    display: inherit;
+}

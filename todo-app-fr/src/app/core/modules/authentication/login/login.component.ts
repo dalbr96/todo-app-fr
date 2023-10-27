@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { loginForm } from './login.form';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
 import { Credentials } from 'src/app/core/model/credentials.model';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -8,6 +7,7 @@ import { Auth } from 'src/app/core/model/auth.model';
 import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 import { loginGenericErrorMessage } from 'src/app/core/constants/app.constants';
+import { LoginForm } from './login.form';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +15,13 @@ import { loginGenericErrorMessage } from 'src/app/core/constants/app.constants';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnDestroy {
-  loginForm: FormGroup;
+  loginForm: LoginForm;
   errorMessage: string | null;
   notifier$: Subject<null>;
 
-  constructor(private readonly authService: AuthorizationService, private readonly router: Router) {
+  constructor(private readonly authService: AuthorizationService, private readonly router: Router, private readonly formBuilder: FormBuilder) {
     this.errorMessage = null;
-    this.loginForm = loginForm;
+    this.loginForm = new LoginForm(this.formBuilder);
     this.notifier$ = new Subject();
   }
 
@@ -61,6 +61,7 @@ export class LoginComponent implements OnDestroy {
   }
 
   private errorResponse() {
-    return (error: HttpErrorResponse) => this.errorMessage = error.error.errorMessage ? error.error.errorMessage : loginGenericErrorMessage
+    return (error: any) =>
+      this.errorMessage = error.error.errorMessage ? error.error.errorMessage : loginGenericErrorMessage
   }
 }

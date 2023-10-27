@@ -1,10 +1,9 @@
 <div class="loginContainer">
-    <form [formGroup]="loginForm" autocomplete="off">
-        <label for="txtUsername"> Usuario </label>
-        <input type="text" id="txtUsername" formControlName="username" />
-
-        <label for="txtPassword"> Contraseña </label>
-        <input type="password" id="txtPassword" formControlName="password" />
+    <form autocomplete="off">
+        <app-text-input class="inputContainer" [control]="loginForm.username" label="Usuario"
+            placeholder="Usuario"></app-text-input>
+        <app-text-input class="inputContainer" [control]="loginForm.password" label="Contraseña" type="password"
+            placeholder="Contraseña"></app-text-input>
 
         <button type="button" [disabled]="!validForm" (click)="loginUser()">Iniciar sesión</button>
     </form>
@@ -14,6 +13,7 @@
     </div>
 
     <div class="msgContainer">
-        <p>¿No tienes una cuenta?, <a [routerLink]="['/authentication/sign_in']" routerLinkActive="active">regístrate</a></p>
+        <p>¿No tienes una cuenta?, <a [routerLink]="['/authentication/sign_in']"
+                routerLinkActive="active">regístrate</a></p>
     </div>
 </div>

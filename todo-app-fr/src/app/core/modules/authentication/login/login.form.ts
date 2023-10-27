@@ -1,6 +1,15 @@
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Credentials } from "src/app/core/model/credentials.model";
 
-export const loginForm: FormGroup = new FormGroup({
-    username: new FormControl('', { validators: [Validators.required], updateOn: 'blur' }),
-    password: new FormControl('', { validators: [Validators.required], updateOn: 'blur' })
-})
+export class LoginForm extends FormGroup {
+
+    readonly username = this.get('username') as FormControl;
+    readonly password = this.get('password') as FormControl;
+
+    constructor(readonly fb: FormBuilder, readonly creentials?: Credentials) {
+        super(fb.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        }).controls)
+    }
+}

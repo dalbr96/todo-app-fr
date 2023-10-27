@@ -5,11 +5,9 @@ import { AuthorizationService } from "src/app/core/http/services/authorization/a
 
 export const guardFunction: CanActivateFn = () => {
   const authService: AuthorizationService = inject(AuthorizationService);
-  const router = inject(Router);
 
-  if (authService.loggedIn()) {
-    return of(true);
+  if (!authService.loggedIn()) {
+    return authService.checkLoggedUser();
   }
-
-  return router.parseUrl('/login');
+  return true;
 }

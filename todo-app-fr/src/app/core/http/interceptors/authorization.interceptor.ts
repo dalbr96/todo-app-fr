@@ -19,7 +19,7 @@ export class AuthorizationInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error) => {
         if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized) {
-          this.router.navigate(['login']);
+          this.router.navigate(['authentication/login']);
         }
         return of(error);
       })

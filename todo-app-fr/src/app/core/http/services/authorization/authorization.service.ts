@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Auth } from 'src/app/core/model/auth.model';
 import { Credentials } from 'src/app/core/model/credentials.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 
 export class AuthorizationService {
   private isLoggedIn = false;

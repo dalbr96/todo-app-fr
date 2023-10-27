@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
-import { appRoutes } from './security/routes/app-routes';
+import { appRoutes } from './app-routes';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 
 
@@ -11,8 +12,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
+    CoreModule,
     RouterModule.forRoot(appRoutes)
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

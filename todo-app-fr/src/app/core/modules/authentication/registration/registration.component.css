@@ -5,9 +5,19 @@ form {
     padding-right: 5%;
 }
 
-.signInContainer{
+.signInContainer {
     position: absolute;
     width: 100%;
     height: 90%;
     background: #e1eadc;
+}
+
+.msgContainer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+a,
+p {
+    color: #213435;
 }

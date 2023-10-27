@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegistrationComponent } from './registration/registration.component';
 import { TestComponent } from './test/test.component';
-import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -10,9 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    RegistrationComponent,
     TestComponent,
-    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    RegistrationComponent
   ]
 })
 export class SharedModule { }

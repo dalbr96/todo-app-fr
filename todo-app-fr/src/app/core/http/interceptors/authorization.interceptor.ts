@@ -7,7 +7,7 @@ import {
   HttpErrorResponse,
   HttpStatusCode
 } from '@angular/common/http';
-import { Observable, catchError, of, tap, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -40,7 +40,9 @@ export class AuthorizationInterceptor implements HttpInterceptor {
   }
 
   private handleUnauthorizedRequests(error: Error) {
-    if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized && !this.router.url.includes('authentication')) {
+    if (error instanceof HttpErrorResponse
+      && error.status === HttpStatusCode.Unauthorized
+      && !this.router.url.includes('authentication')) {
       this.router.navigate(['authentication/login']);
     }
   }

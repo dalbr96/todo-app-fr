@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AuthorizationInterceptor } from './authorization.interceptor';
+import { RouterModule } from '@angular/router';
 
-describe('AuthorizationInterceptor', () => {
+fdescribe('AuthorizationInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      AuthorizationInterceptor
-      ]
+      AuthorizationInterceptor,
+      RouterModule,
+      
+    ]
   }));
 
   it('should be created', () => {

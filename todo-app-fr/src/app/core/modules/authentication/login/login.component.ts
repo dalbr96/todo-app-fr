@@ -55,7 +55,7 @@ export class LoginComponent implements OnDestroy {
 
   private successResponse() {
     return (value: Auth) => {
-      localStorage.setItem("token", value.token);
+      localStorage.setItem("token", value.token.substring(7));
       this.router.navigate(['']);
     };
   }

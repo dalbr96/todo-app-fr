@@ -16,12 +16,27 @@ export class AuthorizationInterceptor implements HttpInterceptor {
   constructor(private readonly router: Router) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request).pipe(
+
+    const req = this.setHeader(request);
+
+    return next.handle(req).pipe(
       catchError((error) => {
         this.handleUnauthorizedRequests(error);
         return throwError(() => error);
       })
     );
+  }
+
+  private setHeader(request: HttpRequest<unknown>): HttpRequest<unknown> {
+    const token: string | null = localStorage.getItem('token');
+    if (token) {
+      return request.clone({
+        setHeaders: {
+          authorization: `Bearer ${token}`
+        }
+      });
+    }
+    return request;
   }
 
   private handleUnauthorizedRequests(error: Error) {

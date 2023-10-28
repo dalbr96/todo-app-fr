@@ -4,6 +4,7 @@ import { HttpService } from '../http/http.service';
 import { environment } from 'src/environments/environment';
 import { Auth } from 'src/app/core/model/auth.model';
 import { Credentials } from 'src/app/core/model/credentials.model';
+import { User } from 'src/app/core/model/user.model';
 
 @Injectable()
 
@@ -18,6 +19,10 @@ export class AuthorizationService {
 
   loginUser(body: Credentials): Observable<Auth> {
     return this.http.post<Auth, Credentials>(environment.loginEndpoint, body).pipe(tap((response) => this.isLoggedIn = !!response));
+  }
+
+  signInUser(body: User): Observable<User> {
+    return this.http.post<User, User>(environment.signInEndpoint, body);
   }
 
   loggedIn(): boolean {

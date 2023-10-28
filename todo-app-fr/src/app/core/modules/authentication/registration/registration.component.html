@@ -9,10 +9,14 @@
         <app-text-input class="inputContainer" [control]="registrationForm.email" label="Correo Electrónico"
             placeholder="Correo Electrónico" type="email"></app-text-input>
 
-        <app-standard-button class="inputContainer" id="btnSignIn" text="Registrarse"
+        <app-standard-button class="inputContainer" id="btnSignIn" text="Registrarse" [disabled]="!validForm"
             (clickEvent)="signInUser()"></app-standard-button>
 
     </form>
+
+    <div class="msgContainer">
+        <p class="errorMessage">{{errorMessage}}</p>
+    </div>
 
     <div class="msgContainer">
         <p>Volver al <a [routerLink]="['/authentication/login']" routerLinkActive="active">Login</a></p>

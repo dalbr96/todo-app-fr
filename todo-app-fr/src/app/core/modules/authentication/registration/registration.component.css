@@ -17,6 +17,10 @@ form {
     padding-top: 1rem;
 }
 
+.errorMessage {
+    color: red;
+}
+
 a,
 p {
     color: #213435;

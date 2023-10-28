@@ -61,7 +61,7 @@ export class LoginComponent implements OnDestroy {
   }
 
   private errorResponse() {
-    return (error: any) =>
+    return (error: HttpErrorResponse) =>
       this.errorMessage = error.error.errorMessage ? error.error.errorMessage : loginGenericErrorMessage
   }
 }

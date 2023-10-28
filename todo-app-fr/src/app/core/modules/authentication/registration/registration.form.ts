@@ -12,7 +12,7 @@ export class RegistrationForm extends FormGroup {
         super(fb.group({
             username: ['', Validators.required],
             password: ['', Validators.required],
-            email: ['', Validators.required, Validators.email],
+            email: ['', [Validators.required, Validators.email]],
             name: ['', Validators.required]
         }).controls)
     }

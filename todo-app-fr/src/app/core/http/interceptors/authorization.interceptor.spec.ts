@@ -1,30 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AuthorizationInterceptor } from './authorization.interceptor';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpErrorResponse, HttpHandler, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
 
 
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-test',
-  template: '<div></div>'
-})
-export class TestComponent {
-
-}
-
-
-fdescribe('AuthorizationInterceptor', () => {
+describe('AuthorizationInterceptor', () => {
   const httpHandlerSpy: jasmine.SpyObj<HttpHandler> = jasmine.createSpyObj(HttpHandler, ['handle']);
   let routerSpy: Router;
   let interceptor: AuthorizationInterceptor;
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule.withRoutes([{ path: 'authentication/login', component: TestComponent }])
-    ],
+    imports: [RouterTestingModule],
     providers: [
       AuthorizationInterceptor,
     ]
@@ -33,6 +21,7 @@ fdescribe('AuthorizationInterceptor', () => {
   beforeEach(() => {
     interceptor = TestBed.inject(AuthorizationInterceptor);
     routerSpy = TestBed.inject(Router);
+    localStorage.clear();
   })
 
   it('should be created', () => {

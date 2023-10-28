@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegistrationComponent } from './registration.component';
-import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TextInputComponent } from 'src/app/shared/text-input/text-input.component';
-import { StandardButtonComponent } from 'src/app/shared/standard-button/standard-button.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
+import { StandardButtonComponent } from 'src/app/shared/standard-button/standard-button.component';
+import { TextInputComponent } from 'src/app/shared/text-input/text-input.component';
+import { RegistrationComponent } from './registration.component';
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;

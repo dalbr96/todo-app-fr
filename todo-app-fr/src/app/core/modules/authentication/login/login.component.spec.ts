@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
-import { LoginComponent } from './login.component';
-import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
+import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
+import { loginGenericErrorMessage } from 'src/app/core/constants/app.constants';
+import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
 import { StandardButtonComponent } from 'src/app/shared/standard-button/standard-button.component';
 import { TextInputComponent } from 'src/app/shared/text-input/text-input.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { credentialsMock } from 'src/assets/test/model/credentials.mock';
-import { Router } from '@angular/router';
-import { asyncError } from 'src/assets/test/utils/async_error';
-import { HttpErrorResponse } from '@angular/common/http';
-import { loginGenericErrorMessage } from 'src/app/core/constants/app.constants';
 import { authMock } from 'src/assets/test/model/auth.mock';
-import { of } from 'rxjs';
+import { credentialsMock } from 'src/assets/test/model/credentials.mock';
+import { asyncError } from 'src/assets/test/utils/async_error';
+import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

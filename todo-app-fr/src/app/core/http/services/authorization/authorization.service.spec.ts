@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthorizationService } from './authorization.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { HttpService } from '../http/http.service';
 import { of } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { authMock } from 'src/assets/test/model/auth.mock';
 import { credentialsMock } from 'src/assets/test/model/credentials.mock';
 import { userMock } from 'src/assets/test/model/user.mock';
+import { environment } from 'src/environments/environment';
+import { HttpService } from '../http/http.service';
+import { AuthorizationService } from './authorization.service';
 
 describe('AuthorizationService', () => {
   let service: AuthorizationService;

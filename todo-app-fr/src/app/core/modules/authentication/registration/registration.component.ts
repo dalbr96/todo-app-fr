@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { RegistrationForm } from './registration.form';
-import { Router } from '@angular/router';
-import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
-import { Subject, takeUntil } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { signInGenericErrorMessage } from 'src/app/core/constants/app.constants';
+import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
+import { RegistrationForm } from './registration.form';
 
 @Component({
   selector: 'app-registration',

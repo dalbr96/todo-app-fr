@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpService } from './http.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { environment } from 'src/environments/environment';
+import { HttpService } from './http.service';
 
 
 describe('HttpService', () => {

@@ -1,12 +1,12 @@
-import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
-import { Credentials } from 'src/app/core/model/credentials.model';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Auth } from 'src/app/core/model/auth.model';
-import { Subject, takeUntil } from 'rxjs';
+import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { loginGenericErrorMessage } from 'src/app/core/constants/app.constants';
+import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
+import { Auth } from 'src/app/core/model/auth.model';
+import { Credentials } from 'src/app/core/model/credentials.model';
 import { LoginForm } from './login.form';
 
 @Component({

@@ -40,7 +40,7 @@ export class AuthorizationInterceptor implements HttpInterceptor {
   }
 
   private handleUnauthorizedRequests(error: Error) {
-    if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized && !this.router.url.includes('authentication/login')) {
+    if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized && !this.router.url.includes('authentication')) {
       this.router.navigate(['authentication/login']);
     }
   }

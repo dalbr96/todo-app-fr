@@ -11,6 +11,7 @@ import { AuthorizationService } from './http/services/authorization/authorizatio
     CommonModule,
     LayoutModule
   ],
+  exports: [LayoutModule],
   providers: [AuthorizationService]
 })
 export class CoreModule { }

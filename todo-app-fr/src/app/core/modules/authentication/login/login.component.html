@@ -1,0 +1,20 @@
+<div class="loginContainer">
+    <form autocomplete="off">
+        <app-text-input class="inputContainer" [control]="loginForm.username" label="Usuario"
+            placeholder="Usuario"></app-text-input>
+        <app-text-input class="inputContainer" [control]="loginForm.password" label="Contraseña" type="password"
+            placeholder="Contraseña"></app-text-input>
+
+        <app-standard-button class="inputContainer" [disabled]="!validForm" id="btnLogin" text="Iniciar Sesión"
+            (clickEvent)="loginUser()"></app-standard-button>
+    </form>
+
+    <div class="msgContainer">
+        <p class="errorMessage">{{errorMessage}}</p>
+    </div>
+
+    <div class="msgContainer">
+        <p>¿No tienes una cuenta?, <a [routerLink]="['/authentication/sign_in']"
+                routerLinkActive="active">regístrate</a></p>
+    </div>
+</div>

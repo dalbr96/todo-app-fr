@@ -1,0 +1,2 @@
+export const loginGenericErrorMessage = "Ocurrió un error en el proceso de autenticación, por favor intente más tarde";
+export const signInGenericErrorMessage = "Ocurrió un error en el proceso de registri, por favor intente más tarde";

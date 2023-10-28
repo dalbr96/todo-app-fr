@@ -1,0 +1,52 @@
+form {
+    display: grid;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+button {
+    background: #46685b;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: border 100ms;
+    color: #e1e3ac;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+button:enabled:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.msgContainer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.errorMessage {
+    color: red;
+}
+
+a,
+p {
+    color: #213435;
+}
+
+.loginContainer {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background: #e1eadc;
+}
+
+.inputContainer{
+    display: inherit;
+}

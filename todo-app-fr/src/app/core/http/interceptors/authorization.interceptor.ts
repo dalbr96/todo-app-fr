@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
   HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
   HttpStatusCode
 } from '@angular/common/http';
-import { Observable, catchError, of, tap, throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable()
 export class AuthorizationInterceptor implements HttpInterceptor {
@@ -40,7 +40,9 @@ export class AuthorizationInterceptor implements HttpInterceptor {
   }
 
   private handleUnauthorizedRequests(error: Error) {
-    if (error instanceof HttpErrorResponse && error.status === HttpStatusCode.Unauthorized && !this.router.url.includes('authentication')) {
+    if (error instanceof HttpErrorResponse
+      && error.status === HttpStatusCode.Unauthorized
+      && !this.router.url.includes('authentication')) {
       this.router.navigate(['authentication/login']);
     }
   }

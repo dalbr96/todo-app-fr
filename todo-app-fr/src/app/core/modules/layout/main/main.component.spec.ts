@@ -10,10 +10,10 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponent ],
+      declarations: [MainComponent],
       imports: [RouterTestingModule, BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;
@@ -23,4 +23,11 @@ describe('MainComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should change the value of openMenu when toggleOpenMenu is invoked', () => {
+    component.openMenu = false;
+    component.toogleOpenMenu();
+
+    expect(component.openMenu).toBeTrue();
+  })
 });

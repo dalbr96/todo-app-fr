@@ -1,5 +1,4 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { Credentials } from "src/app/core/model/credentials.model";
 
 export class LoginForm extends FormGroup {
 

@@ -9,10 +9,10 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ],
+      declarations: [NavbarComponent],
       imports: [BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
@@ -22,4 +22,12 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should change the value of isCollapsed when toggleNavigationMenu is invoked', () => {
+    component.isCollapsed = false;
+    component.toggleNavigationMenu();
+
+    expect(component.isCollapsed).toBeTrue();
+  })
 });

@@ -18,4 +18,12 @@ describe('StandardButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit an event when clickedButton is invoked', () => {
+    spyOn(component.clickEvent, 'emit');
+
+    component.clickedButton();
+
+    expect(component.clickEvent.emit).toHaveBeenCalled();
+  })
 });

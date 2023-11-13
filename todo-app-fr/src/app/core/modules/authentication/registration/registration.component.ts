@@ -3,7 +3,6 @@ import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { signInGenericErrorMessage } from 'src/app/core/constants/app.constants';
 import { AuthorizationService } from 'src/app/core/http/services/authorization/authorization.service';
 import { RegistrationForm } from './registration.form';
 
@@ -29,8 +28,13 @@ export class RegistrationComponent implements OnDestroy {
   }
 
   signInUser() {
-    const body = this.registrationForm.value;
-    this.authService.signInUser(body).pipe(takeUntil(this.onDestroy$)).subscribe(this.manageSignInResponse())
+    if (this.registrationForm.valid) {
+      this.errorMessage = '';
+      const body = this.registrationForm.value;
+      this.authService.signInUser(body)
+        .pipe(takeUntil(this.onDestroy$))
+        .subscribe(this.manageSignInResponse());
+    }
   }
 
   get validForm() {
@@ -52,6 +56,6 @@ export class RegistrationComponent implements OnDestroy {
 
   private errorResponse() {
     return (error: HttpErrorResponse) =>
-      this.errorMessage = error.message ? error.message : signInGenericErrorMessage
+      this.errorMessage = error.message;
   }
 }

@@ -25,6 +25,10 @@
 }
 
 @media(min-width:831px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
     .main-navigation {
         max-width: 20vw;
         height: 100vh;
@@ -40,7 +44,7 @@
 }
 
 nav{
-    background-color: #648a64;
+    background: #648a64;
 }
 
 img {
@@ -59,14 +63,18 @@ button {
 
 button:focus,
 button:focus-visible {
-    background-color: #46685b;
+    background: #46685b;
     border: none;
     outline: none;
 }
 
 
 .main-navigation {
-    background-color: #648a64;
+    background: #648a64;
     opacity: 0.7;
     text-align: center;
+}
+
+.main-section{
+    background: #e1eadc;
 }
